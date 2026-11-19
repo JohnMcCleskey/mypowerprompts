@@ -17,7 +17,7 @@ export default function HomePage() {
   const frameworks = getFrameworks();
   const packs = getPacks();
   const shelf = getShelf();
-  const latest = getNews()[0];
+  const latestNotes = getNews().slice(0, 3);
   const hrefs = getCatalog().map((item) => item.href);
 
   return (
@@ -45,22 +45,28 @@ export default function HomePage() {
             <SurpriseButton hrefs={hrefs} />
           </div>
         </div>
-        {latest ? (
-          <article className="news-card">
+        {latestNotes.length > 0 ? (
+          <aside className="news-card">
             <p className="eyebrow">What&apos;s new</p>
-            {latest.example ? <p className="stamp">Example</p> : null}
-            <h2>
-              <Link href={latest.href}>{latest.title}</Link>
-            </h2>
-            <p>{latest.description}</p>
-            <p className="meta">
-              {formatDate(latest.date)} · {newsKindLabel(latest.kind)}
-              {latest.author ? ` · ${latest.author}` : ""}
-            </p>
+            <ul className="news-list">
+              {latestNotes.map((note) => (
+                <li key={note.key}>
+                  {note.example ? <p className="stamp">Example</p> : null}
+                  <h2>
+                    <Link href={note.href}>{note.title}</Link>
+                  </h2>
+                  <p>{note.description}</p>
+                  <p className="meta">
+                    {formatDate(note.date)} · {newsKindLabel(note.kind)}
+                    {note.author ? ` · ${note.author}` : ""}
+                  </p>
+                </li>
+              ))}
+            </ul>
             <Link className="text-link" href="/whats-new">
               All notes
             </Link>
-          </article>
+          </aside>
         ) : null}
       </section>
 
