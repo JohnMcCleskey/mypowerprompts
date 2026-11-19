@@ -1,0 +1,46 @@
+{
+  "id": "sop-builder",
+  "version": "0.1.0",
+  "type": "skill",
+  "title": "SOP Builder",
+  "summary": "Converts know-how into repeatable standard operating procedures.",
+  "categories": [
+    "operations",
+    "documentation"
+  ],
+  "tags": [
+    "sop",
+    "process",
+    "documentation",
+    "training"
+  ],
+  "recommendedModels": [
+    "openai",
+    "anthropic",
+    "gemini"
+  ],
+  "toolProfile": "docs-only",
+  "maturity": "starter",
+  "variables": [
+    {
+      "key": "process_name",
+      "label": "Process name",
+      "required": true
+    },
+    {
+      "key": "team_context",
+      "label": "Team context",
+      "required": false
+    },
+    {
+      "key": "success_definition",
+      "label": "Success definition",
+      "required": false
+    }
+  ],
+  "exports": [
+    "markdown-bundle",
+    "json-manifest"
+  ],
+  "author": "Power Prompts"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "operating-system-sprint",
+  "version": "1.0.0",
+  "type": "workflow",
+  "title": "Operating System Sprint",
+  "summary": "5-day sprint for converting recurring work into AI-assisted routines and loops.",
+  "categories": [
+    "workflows",
+    "operations",
+    "automation"
+  ],
+  "tags": [
+    "sprint",
+    "operating system",
+    "automation",
+    "audit",
+    "routines"
+  ],
+  "maturity": "stable",
+  "author": "Power Prompts"
+}

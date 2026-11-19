@@ -1,0 +1,36 @@
+name: Agent setup
+description: Suggest a skill, connector, harness, or agent pack people can plug into their own stack.
+title: "Pack: "
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What does this setup do?
+      description: Who it is for, what files it needs, and which tools it plugs into.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Closest shape
+      options:
+        - Agent pack
+        - Skill
+        - Connector
+        - Harness or tooling
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Name to credit
+      description: Optional. This can show on the page.
+  - type: checkboxes
+    id: ok
+    attributes:
+      label: Ready to share
+      options:
+        - label: I wrote this, or I have permission to share it
+          required: true
+        - label: It does not include secrets, tokens, or private endpoints
+          required: true

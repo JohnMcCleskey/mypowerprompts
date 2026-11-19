@@ -1,0 +1,22 @@
+{
+  "id": "self-improving-work-loop",
+  "version": "1.0.0",
+  "type": "workflow",
+  "title": "Self-Improving Work Loop",
+  "summary": "Goal-to-outcome loop with verification, reflection, memory, and approval gates.",
+  "categories": [
+    "workflows",
+    "self-improvement",
+    "operations"
+  ],
+  "tags": [
+    "loop",
+    "workflow",
+    "self-improving",
+    "evals",
+    "memory",
+    "approval"
+  ],
+  "maturity": "stable",
+  "author": "Power Prompts"
+}

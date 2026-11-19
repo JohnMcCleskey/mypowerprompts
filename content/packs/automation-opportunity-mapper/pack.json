@@ -1,0 +1,105 @@
+{
+  "id": "automation-opportunity-mapper",
+  "version": "1.0.0",
+  "type": "agent",
+  "title": "Automation Opportunity Mapper",
+  "summary": "Identifies repeatable work that can be automated and turns it into an implementation-ready backlog.",
+  "categories": [
+    "operations-intelligence",
+    "automation",
+    "workflow-design"
+  ],
+  "tags": [
+    "automation",
+    "augmentation",
+    "approval-gated",
+    "backlog",
+    "repeatable-work"
+  ],
+  "recommendedModels": [
+    "openai:gpt-5.1",
+    "anthropic:claude-sonnet-4.5",
+    "google:gemini-2.5-pro"
+  ],
+  "toolProfile": {
+    "mode": "provider-agnostic",
+    "preferredAccess": "read-only-first",
+    "notes": "Classify work before automation and preserve human review for approval-gated or high-risk steps."
+  },
+  "maturity": "stable",
+  "variables": [
+    {
+      "name": "workflow_name",
+      "description": "The workflow or process being analyzed for automation opportunities.",
+      "required": true
+    },
+    {
+      "name": "volume_and_frequency",
+      "description": "How often the work happens and at what volume.",
+      "required": false
+    },
+    {
+      "name": "approval_constraints",
+      "description": "Policies, gates, or human checks that must remain in place.",
+      "required": false
+    }
+  ],
+  "exports": [
+    {
+      "path": "AGENT.md",
+      "type": "markdown",
+      "description": "Role, mission, and canonical operating guidance."
+    },
+    {
+      "path": "SYSTEM.md",
+      "type": "markdown",
+      "description": "Core principles and automation classification guidance."
+    },
+    {
+      "path": "STYLE.md",
+      "type": "markdown",
+      "description": "Voice, formatting, and response style guidance."
+    },
+    {
+      "path": "TOOLS.md",
+      "type": "markdown",
+      "description": "How to use tools safely and effectively."
+    },
+    {
+      "path": "MEMORY.md",
+      "type": "markdown",
+      "description": "Bounded memory guidance and retention boundaries."
+    },
+    {
+      "path": "WORKFLOW.md",
+      "type": "markdown",
+      "description": "Routine, adoption, and confirmation loop."
+    },
+    {
+      "path": "HANDOFFS.md",
+      "type": "markdown",
+      "description": "Handoff and escalation guidance."
+    },
+    {
+      "path": "EVALS.md",
+      "type": "markdown",
+      "description": "Evaluation checklist and rubric structure."
+    },
+    {
+      "path": "EXAMPLES.md",
+      "type": "markdown",
+      "description": "Representative usage examples."
+    },
+    {
+      "path": "INPUTS.md",
+      "type": "markdown",
+      "description": "Preferred inputs and context needed to operate well."
+    },
+    {
+      "path": "OUTPUTS.md",
+      "type": "markdown",
+      "description": "Canonical 9-section output structure."
+    }
+  ],
+  "author": "Power Prompts"
+}

@@ -1,0 +1,107 @@
+{
+  "id": "frontier-capability-scout",
+  "version": "1.0.0",
+  "type": "agent",
+  "title": "Frontier Capability Scout",
+  "summary": "Scouts emerging capabilities, separates signal from hype, and turns discoveries into practical adoption guidance.",
+  "categories": [
+    "operations-intelligence",
+    "capability-scouting",
+    "trend-analysis"
+  ],
+  "tags": [
+    "frontier",
+    "adoption",
+    "maturity",
+    "portability",
+    "verification"
+  ],
+  "recommendedModels": [
+    "openai:gpt-5.1",
+    "anthropic:claude-sonnet-4.5",
+    "google:gemini-2.5-pro",
+    "manus:default",
+    "codex:default"
+  ],
+  "toolProfile": {
+    "mode": "provider-agnostic",
+    "preferredAccess": "read-only-first",
+    "notes": "Verify capabilities against primary sources and call out provider-specific assumptions before recommending adoption."
+  },
+  "maturity": "stable",
+  "variables": [
+    {
+      "name": "capability_area",
+      "description": "The capability domain or trend to scout.",
+      "required": true
+    },
+    {
+      "name": "use_case",
+      "description": "The intended use case or decision that the scouting should support.",
+      "required": true
+    },
+    {
+      "name": "time_horizon",
+      "description": "How far ahead the scouting should look.",
+      "required": false
+    }
+  ],
+  "exports": [
+    {
+      "path": "AGENT.md",
+      "type": "markdown",
+      "description": "Role, mission, and canonical operating guidance."
+    },
+    {
+      "path": "SYSTEM.md",
+      "type": "markdown",
+      "description": "Core principles and provider-aware portability guidance."
+    },
+    {
+      "path": "STYLE.md",
+      "type": "markdown",
+      "description": "Voice, formatting, and response style guidance."
+    },
+    {
+      "path": "TOOLS.md",
+      "type": "markdown",
+      "description": "How to verify capabilities and sources."
+    },
+    {
+      "path": "MEMORY.md",
+      "type": "markdown",
+      "description": "Bounded memory guidance and retention boundaries."
+    },
+    {
+      "path": "WORKFLOW.md",
+      "type": "markdown",
+      "description": "Routine, adoption, and confirmation loop."
+    },
+    {
+      "path": "HANDOFFS.md",
+      "type": "markdown",
+      "description": "Briefing and escalation guidance."
+    },
+    {
+      "path": "EVALS.md",
+      "type": "markdown",
+      "description": "Evaluation checklist and rubric structure."
+    },
+    {
+      "path": "EXAMPLES.md",
+      "type": "markdown",
+      "description": "Representative usage examples."
+    },
+    {
+      "path": "INPUTS.md",
+      "type": "markdown",
+      "description": "Preferred inputs and context needed to operate well."
+    },
+    {
+      "path": "OUTPUTS.md",
+      "type": "markdown",
+      "description": "Canonical 9-section output structure."
+    }
+  ],
+  "author": "Power Prompts"
+}

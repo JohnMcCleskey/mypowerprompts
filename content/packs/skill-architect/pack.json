@@ -1,0 +1,48 @@
+{
+  "id": "skill-architect",
+  "version": "0.1.0",
+  "type": "agent",
+  "title": "Skill Architect",
+  "summary": "Builds reusable skill packs and agent starter systems.",
+  "categories": [
+    "builders",
+    "operations"
+  ],
+  "tags": [
+    "skills",
+    "agents",
+    "frameworks",
+    "templates"
+  ],
+  "recommendedModels": [
+    "openai",
+    "anthropic",
+    "gemini"
+  ],
+  "toolProfile": "docs-and-files",
+  "maturity": "starter",
+  "variables": [
+    {
+      "key": "user_role",
+      "label": "User role",
+      "required": false
+    },
+    {
+      "key": "target_use_case",
+      "label": "Target use case",
+      "required": true
+    },
+    {
+      "key": "preferred_model_stack",
+      "label": "Preferred model stack",
+      "required": false
+    }
+  ],
+  "exports": [
+    "markdown-bundle",
+    "openai-agent",
+    "claude-mcp",
+    "gemini-grounded"
+  ],
+  "author": "Power Prompts"
+}

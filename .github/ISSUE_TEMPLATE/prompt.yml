@@ -1,0 +1,35 @@
+name: Prompt or fun item
+description: Suggest a prompt, a playful one-off, or a thinking framework.
+title: "Prompt: "
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What should this help someone do?
+      description: A few sentences. Include the prompt text if you already have it.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - Prompt
+        - Framework
+        - Fun item
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Name to credit
+      description: Optional. This can show on the page.
+  - type: checkboxes
+    id: ok
+    attributes:
+      label: Ready to share
+      options:
+        - label: I wrote this, or I have permission to share it
+          required: true
+        - label: It does not include secrets or someone else's private information
+          required: true
