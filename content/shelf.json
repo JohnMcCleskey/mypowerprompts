@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "prompt",
+    "id": "p1"
+  },
+  {
+    "kind": "framework",
+    "slug": "first-principles"
+  },
+  {
+    "kind": "pack",
+    "id": "skill-architect"
+  },
+  {
+    "kind": "prompt",
+    "id": "h2"
+  },
+  {
+    "kind": "framework",
+    "slug": "inversion"
+  },
+  {
+    "kind": "pack",
+    "id": "frontier-capability-scout"
+  }
+]

@@ -1,0 +1,106 @@
+{
+  "id": "quality-improvement-advisor",
+  "version": "1.0.0",
+  "type": "agent",
+  "title": "Quality Improvement Advisor",
+  "summary": "Reviews accessible systems, artifacts, and workflows to surface quality improvements with approval-ready implementation plans.",
+  "categories": [
+    "operations-intelligence",
+    "quality-improvement",
+    "implementation-planning"
+  ],
+  "tags": [
+    "quality",
+    "audit",
+    "recommendations",
+    "implementation plan",
+    "approval gate",
+    "continuous improvement"
+  ],
+  "recommendedModels": [
+    "openai:gpt-5.1",
+    "anthropic:claude-sonnet-4.5",
+    "google:gemini-2.5-pro"
+  ],
+  "toolProfile": {
+    "mode": "provider-agnostic",
+    "preferredAccess": "read-only-first",
+    "notes": "Inventory accessible context first, then propose improvements. Execute only after explicit approval."
+  },
+  "maturity": "stable",
+  "variables": [
+    {
+      "name": "access_scope",
+      "description": "The sources, tools, repositories, docs, or workflows the agent may inspect.",
+      "required": true
+    },
+    {
+      "name": "quality_goal",
+      "description": "The quality outcome the user wants to improve.",
+      "required": false
+    },
+    {
+      "name": "approval_boundary",
+      "description": "What the agent may draft, modify, or execute only after approval.",
+      "required": true
+    }
+  ],
+  "exports": [
+    {
+      "path": "AGENT.md",
+      "type": "markdown",
+      "description": "Role, mission, and canonical operating guidance."
+    },
+    {
+      "path": "SYSTEM.md",
+      "type": "markdown",
+      "description": "Core principles and decision rules."
+    },
+    {
+      "path": "STYLE.md",
+      "type": "markdown",
+      "description": "Voice, formatting, and response style guidance."
+    },
+    {
+      "path": "TOOLS.md",
+      "type": "markdown",
+      "description": "How to use tools safely and effectively."
+    },
+    {
+      "path": "MEMORY.md",
+      "type": "markdown",
+      "description": "Bounded memory guidance and retention boundaries."
+    },
+    {
+      "path": "WORKFLOW.md",
+      "type": "markdown",
+      "description": "Discovery, recommendation, approval, and execution loop."
+    },
+    {
+      "path": "HANDOFFS.md",
+      "type": "markdown",
+      "description": "Handoff and escalation guidance."
+    },
+    {
+      "path": "EVALS.md",
+      "type": "markdown",
+      "description": "Evaluation checklist and rubric structure."
+    },
+    {
+      "path": "EXAMPLES.md",
+      "type": "markdown",
+      "description": "Representative usage examples."
+    },
+    {
+      "path": "INPUTS.md",
+      "type": "markdown",
+      "description": "Preferred inputs and context needed to operate well."
+    },
+    {
+      "path": "OUTPUTS.md",
+      "type": "markdown",
+      "description": "Canonical output structure."
+    }
+  ],
+  "author": "Power Prompts"
+}

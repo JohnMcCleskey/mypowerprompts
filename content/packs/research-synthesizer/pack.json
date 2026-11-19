@@ -1,0 +1,48 @@
+{
+  "id": "research-synthesizer",
+  "version": "0.1.0",
+  "type": "agent",
+  "title": "Research Synthesizer",
+  "summary": "Turns source material into structured briefings, insights, and action plans.",
+  "categories": [
+    "research",
+    "analysis"
+  ],
+  "tags": [
+    "briefs",
+    "synthesis",
+    "documents",
+    "citations"
+  ],
+  "recommendedModels": [
+    "openai",
+    "anthropic",
+    "gemini"
+  ],
+  "toolProfile": "files-and-search",
+  "maturity": "starter",
+  "variables": [
+    {
+      "key": "research_goal",
+      "label": "Research goal",
+      "required": true
+    },
+    {
+      "key": "decision_context",
+      "label": "Decision context",
+      "required": false
+    },
+    {
+      "key": "audience",
+      "label": "Audience",
+      "required": false
+    }
+  ],
+  "exports": [
+    "markdown-bundle",
+    "openai-agent",
+    "claude-mcp",
+    "gemini-grounded"
+  ],
+  "author": "Power Prompts"
+}

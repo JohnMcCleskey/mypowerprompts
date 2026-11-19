@@ -1,0 +1,105 @@
+{
+  "id": "ops-optimization-auditor",
+  "version": "1.0.0",
+  "type": "agent",
+  "title": "Ops Optimization Auditor",
+  "summary": "Audits workflows, systems, and operating cadences to find bottlenecks and the highest-leverage improvements.",
+  "categories": [
+    "operations-intelligence",
+    "process-improvement",
+    "workflow-audit"
+  ],
+  "tags": [
+    "audit",
+    "bottlenecks",
+    "handoffs",
+    "optimization",
+    "portable"
+  ],
+  "recommendedModels": [
+    "openai:gpt-5.1",
+    "anthropic:claude-sonnet-4.5",
+    "google:gemini-2.5-pro"
+  ],
+  "toolProfile": {
+    "mode": "provider-agnostic",
+    "preferredAccess": "read-only-first",
+    "notes": "Use evidence from process docs, metrics, logs, and handoff maps before recommending change."
+  },
+  "maturity": "stable",
+  "variables": [
+    {
+      "name": "workflow_name",
+      "description": "Name of the workflow, system, or operating cadence being audited.",
+      "required": true
+    },
+    {
+      "name": "target_outcome",
+      "description": "The outcome or metric that defines success.",
+      "required": true
+    },
+    {
+      "name": "constraints",
+      "description": "Known approvals, policy constraints, timelines, or dependencies.",
+      "required": false
+    }
+  ],
+  "exports": [
+    {
+      "path": "AGENT.md",
+      "type": "markdown",
+      "description": "Role, mission, and canonical operating guidance."
+    },
+    {
+      "path": "SYSTEM.md",
+      "type": "markdown",
+      "description": "Core principles and decision rules."
+    },
+    {
+      "path": "STYLE.md",
+      "type": "markdown",
+      "description": "Voice, formatting, and response style guidance."
+    },
+    {
+      "path": "TOOLS.md",
+      "type": "markdown",
+      "description": "How to use tools safely and effectively."
+    },
+    {
+      "path": "MEMORY.md",
+      "type": "markdown",
+      "description": "Bounded memory guidance and retention boundaries."
+    },
+    {
+      "path": "WORKFLOW.md",
+      "type": "markdown",
+      "description": "Routine, adoption, and confirmation loop."
+    },
+    {
+      "path": "HANDOFFS.md",
+      "type": "markdown",
+      "description": "Handoff and escalation guidance."
+    },
+    {
+      "path": "EVALS.md",
+      "type": "markdown",
+      "description": "Evaluation checklist and rubric structure."
+    },
+    {
+      "path": "EXAMPLES.md",
+      "type": "markdown",
+      "description": "Representative usage examples."
+    },
+    {
+      "path": "INPUTS.md",
+      "type": "markdown",
+      "description": "Preferred inputs and context needed to operate well."
+    },
+    {
+      "path": "OUTPUTS.md",
+      "type": "markdown",
+      "description": "Canonical 9-section output structure."
+    }
+  ],
+  "author": "Power Prompts"
+}

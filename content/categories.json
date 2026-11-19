@@ -1,0 +1,54 @@
+{
+  "prompts": [
+    {
+      "id": "productivity",
+      "name": "Productivity",
+      "description": "Supercharge your workflow and get more done"
+    },
+    {
+      "id": "humor",
+      "name": "Make Me Laugh",
+      "description": "Lighthearted prompts to spark joy and creativity"
+    },
+    {
+      "id": "ai-programming",
+      "name": "AI Programming",
+      "description": "Train and shape your AI assistant to perfection"
+    },
+    {
+      "id": "idea-sparks",
+      "name": "Idea Sparks",
+      "description": "Ignite new concepts and creative breakthroughs"
+    },
+    {
+      "id": "whats-new",
+      "name": "What's New",
+      "description": "Stay ahead with AI-powered insights on the latest"
+    },
+    {
+      "id": "memory-lane",
+      "name": "Memory Lane",
+      "description": "Reconnect with the past through AI reflection"
+    },
+    {
+      "id": "unlock-ai",
+      "name": "Unlock AI",
+      "description": "Discover hidden capabilities and advanced techniques"
+    },
+    {
+      "id": "model-dialogue",
+      "name": "Model Dialogue",
+      "description": "Set up AI-to-AI conversations and watch them think"
+    },
+    {
+      "id": "strategize",
+      "name": "Strategize & Organize",
+      "description": "Decision-making, goal-setting, and career direction game plans"
+    },
+    {
+      "id": "agent-teams",
+      "name": "Agent Teams",
+      "description": "System prompts to program specialist AI agents into a full working team"
+    }
+  ]
+}

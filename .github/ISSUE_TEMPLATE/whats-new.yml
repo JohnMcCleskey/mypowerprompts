@@ -1,0 +1,35 @@
+name: What's new note
+description: Propose a daily prompt. It is published at /p/<slug> and listed in What's new.
+title: "What's new: "
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+    validations:
+      required: true
+  - type: textarea
+    id: note
+    attributes:
+      label: The note
+      description: What changed, why it matters, and which shelf item it should link to.
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Shelf link
+      description: Optional. Example /prompts/morning-command-center
+  - type: input
+    id: author
+    attributes:
+      label: Name to credit
+  - type: checkboxes
+    id: ok
+    attributes:
+      label: Ready to share
+      options:
+        - label: This is a real note, not a placeholder
+          required: true
+        - label: It does not include secrets or private information
+          required: true

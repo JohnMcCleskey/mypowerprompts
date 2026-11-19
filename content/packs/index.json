@@ -1,0 +1,27 @@
+{
+  "families": [
+    {
+      "name": "operations-intelligence",
+      "title": "Operations Intelligence",
+      "description": "Portable packs for auditing workflows, scouting frontier capabilities, and mapping automation opportunities.",
+      "packs": [
+        "operating-system-sprint",
+        "self-improving-work-loop",
+        "ops-optimization-auditor",
+        "frontier-capability-scout",
+        "automation-opportunity-mapper",
+        "quality-improvement-advisor"
+      ]
+    },
+    {
+      "name": "builders",
+      "title": "Builders",
+      "description": "Packs for designing skills, writing procedures, and turning source material into decisions.",
+      "packs": [
+        "skill-architect",
+        "research-synthesizer",
+        "sop-builder"
+      ]
+    }
+  ]
+}
