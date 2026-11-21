@@ -25,9 +25,19 @@ export function splitSource(source: string): { title: string; url: string | null
   const url = match[0].replace(/[),.;]+$/, "");
   const title = source
     .replace(match[0], "")
-    .replace(/\s*[—–-]\s*$/, "")
+    .replace(/[\s,—–-]+$/u, "")
     .trim();
   return { title: title || url, url };
+}
+
+function optionalXPost(value: unknown, file: string): string | null {
+  if (typeof value !== "string" || !value.trim()) return null;
+  const xPost = httpsUrl(value.trim(), file, "x_post_url");
+  const host = new URL(xPost).hostname.replace(/^www\./, "");
+  if (host !== "x.com" && host !== "twitter.com") {
+    throw new Error(`x_post_url in ${file} must be an x.com or twitter.com link`);
+  }
+  return xPost;
 }
 
 function httpsUrl(value: string, file: string, key: string): string {
@@ -61,11 +71,7 @@ export function parseDailyDocument(source: string, filename: string): DailyPromp
   if (tags.length === 0 && !category) throw new Error(`Daily prompt ${filename} needs tags or a category`);
   const sourceText = requiredString(data.source, "source", filename);
   const sourceParts = splitSource(sourceText);
-  const xPost = httpsUrl(requiredString(data.x_post_url, "x_post_url", filename), filename, "x_post_url");
-  const host = new URL(xPost).hostname.replace(/^www\./, "");
-  if (host !== "x.com" && host !== "twitter.com") {
-    throw new Error(`x_post_url in ${filename} must be an x.com or twitter.com link`);
-  }
+  const xPost = optionalXPost(data.x_post_url, filename);
   return {
     date,
     title: requiredString(data.title, "title", filename),
@@ -86,5 +92,6 @@ export function parseDailyDocument(source: string, filename: string): DailyPromp
 export function dailyDownload(daily: DailyPrompt): string {
   const tags = daily.tags.length > 0 ? `\n\nTags: ${daily.tags.join(", ")}` : "";
   const source = daily.sourceUrl ? `${daily.sourceTitle} — ${daily.sourceUrl}` : daily.source;
-  return `# ${daily.title}\n\n${daily.whatItDoes}${tags}\n\n## Prompt\n\n${daily.prompt}\n\n## Setup\n\n${daily.setup}\n\n## Check it\n\n${daily.checkIt}\n\nSource: ${source}\nSeen on X: ${daily.xPostUrl}\n`;
+  const seen = daily.xPostUrl ? `\nSeen on X: ${daily.xPostUrl}` : "";
+  return `# ${daily.title}\n\n${daily.whatItDoes}${tags}\n\n## Prompt\n\n${daily.prompt}\n\n## Setup\n\n${daily.setup}\n\n## Check it\n\n${daily.checkIt}\n\nSource: ${source}${seen}\n`;
 }

@@ -96,7 +96,7 @@ export type DailyPrompt = {
   source: string;
   sourceTitle: string;
   sourceUrl: string | null;
-  xPostUrl: string;
+  xPostUrl: string | null;
 };
 
 export type NewsKind = "daily" | "note";
