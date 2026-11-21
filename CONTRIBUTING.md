@@ -109,7 +109,7 @@ People can copy each file and download the folder as a zip. Put the starter prom
 
 This is the file the X posting assistant adds. One prompt, one file. The filename is the date plus the slug. The public URL uses only the slug, so a post can link to `https://mypowerprompts.com/p/improvement-log`.
 
-The page gets a copy button, setup, a check, the source, a Seen on X link, and Open Graph title and description. What's new lists it automatically. Do not also add a What's new note for the same item.
+The page gets a copy button, setup, a check, the source, and Open Graph title and description. A Seen on X link appears only when `x_post_url` is filled in. What's new lists it automatically. Do not also add a What's new note for the same item.
 
 ```markdown
 ---
@@ -127,7 +127,7 @@ x_post_url: https://x.com/i/status/123
 ---
 ```
 
-Save that as `content/daily/2026-11-19-improvement-log.md`. `date` is `YYYY-MM-DD`. `slug` is lowercase words with hyphens. `tags` can be a YAML list or a comma-separated string. `category` is optional. `x_post_url` must be an `https://x.com` or `https://twitter.com` link. `what_it_does` is the Open Graph description, so write it as one sentence.
+Save that as `content/daily/2026-11-19-improvement-log.md`. `date` is `YYYY-MM-DD`. `slug` is lowercase words with hyphens. `tags` can be a YAML list or a comma-separated string. `category` is optional. `x_post_url` is optional: leave it empty until the post is live, or set an `https://x.com` or `https://twitter.com` link. `what_it_does` is the Open Graph description, so write it as one sentence.
 
 Do not rename the slug after the link has been posted.
 

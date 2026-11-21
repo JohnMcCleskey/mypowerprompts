@@ -56,9 +56,11 @@ export default async function DailyPromptPage({ params }: PageProps) {
           <a className="btn btn-ghost" href={`${path}/download`}>
             Download
           </a>
-          <a className="btn btn-ghost" href={daily.xPostUrl} rel="noreferrer noopener">
-            Seen on X
-          </a>
+          {daily.xPostUrl ? (
+            <a className="btn btn-ghost" href={daily.xPostUrl} rel="noreferrer noopener">
+              Seen on X
+            </a>
+          ) : null}
         </div>
       </header>
       <pre className="sheet">{daily.prompt}</pre>
