@@ -27,11 +27,25 @@ test("catalog has the public shelf", () => {
   assert.equal(updates.length, 0);
   assert.equal(updates.some((update) => update.example), false);
   const daily = getDailyPrompts();
-  assert.equal(daily.length, 2);
-  assert.equal(daily[0]?.slug, "handoff-brief");
-  assert.equal(daily[0]?.date, "2026-11-20");
-  assert.equal(daily[0]?.xPostUrl, null);
-  assert.match(daily[0]?.prompt ?? "", /computer-use agent/);
+  assert.ok(daily.length >= 1);
+  for (let index = 1; index < daily.length; index += 1) {
+    assert.ok(daily[index - 1].date >= daily[index].date);
+  }
+  for (const prompt of daily) {
+    assert.match(prompt.date, /^\d{4}-\d{2}-\d{2}$/);
+    assert.ok(prompt.title);
+    assert.match(prompt.slug, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+    assert.ok(prompt.whatItDoes);
+    assert.ok(prompt.prompt);
+    assert.ok(prompt.setup);
+    assert.ok(prompt.checkIt);
+    assert.ok(prompt.source);
+    assert.ok(prompt.tags.length > 0 || prompt.category);
+  }
+  const handoff = daily.find((prompt) => prompt.slug === "handoff-brief");
+  assert.equal(handoff?.date, "2026-11-20");
+  assert.equal(handoff?.xPostUrl, null);
+  assert.match(handoff?.prompt ?? "", /computer-use agent/);
   const earlier = daily.find((prompt) => prompt.slug === "improvement-log");
   assert.equal(earlier?.date, "2026-11-19");
   assert.match(earlier?.prompt ?? "", /Improvement Log/);
@@ -39,8 +53,7 @@ test("catalog has the public shelf", () => {
   assert.match(earlier?.sourceTitle ?? "", /Self-Improvement Memory paper/);
   assert.equal(earlier?.xPostUrl, "https://x.com/i/status/2123460248530755875");
   const news = getNews();
-  assert.equal(news[0]?.href, "/p/handoff-brief");
-  assert.equal(news[1]?.href, "/p/improvement-log");
+  assert.equal(news[0]?.href, `/p/${daily[0]?.slug}`);
   assert.equal(news[0]?.kind, "daily");
   assert.equal(news.some((item) => item.example), false);
   assert.equal(getShelf().length, 6);
