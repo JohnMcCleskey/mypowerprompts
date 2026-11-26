@@ -9,5 +9,5 @@ prompt: |
 setup: Paste it at the start of any request in ChatGPT, Claude, Gemini, or Grok, or add it to your standing instructions (Custom Instructions, a Claude Project, a Gem, or your agent's rules file) so every draft gets the check. Coding agents that build web pages can also install one of the dedicated design skills, such as github.com/pbakaus/impeccable.
 check_it: Ask for a short landing page section or email. Before the draft, it should name specific generic patterns it found (stock phrases, filler openers, cookie-cutter layouts or colors) and then show a version with those fixed. If the list is vague, ask it to quote each generic line it changed.
 source: 'Linkly AI, State of AI Agent Skills: November 2026 (impeccable, hallmark, and taste-skill among the top ten star gainers, 69,000 stars combined, Oct 27 to Nov 25), https://linkly.ai/blog/state-of-ai-agent-skills-2026-11 ; impeccable repo, https://github.com/pbakaus/impeccable'
-x_post_url: ""
+x_post_url: "https://x.com/i/status/2125983146676047960"
 ---
